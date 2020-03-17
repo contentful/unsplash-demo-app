@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, Button, Asset } from '@contentful/forma-36-react-components';
+import { TextInput, Asset } from '@contentful/forma-36-react-components';
 import { DialogExtensionSDK } from 'contentful-ui-extensions-sdk';
 import debounce from 'lodash.debounce';
 import Client from './client';

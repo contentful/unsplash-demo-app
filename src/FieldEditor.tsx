@@ -1,16 +1,13 @@
 import React from 'react';
 import { Button } from '@contentful/forma-36-react-components';
 import { FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
-import Client from './client';
 
 interface Props {
   sdk: FieldExtensionSDK;
 }
 
 interface State {
-  searchValue: string;
   value: UnsplashResult | null;
-  client: Client;
 }
 
 export default class FieldEditor extends React.Component<Props, State> {
@@ -18,9 +15,7 @@ export default class FieldEditor extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      searchValue: '',
       value: props.sdk.field.getValue() || null,
-      client: new Client(process.env.UNSPLASH_TOKEN)
     };
   }
 
