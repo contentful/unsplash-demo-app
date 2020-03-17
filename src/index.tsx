@@ -5,9 +5,11 @@ import {
   FieldExtensionSDK,
   AppExtensionSDK,
   locations,
+  DialogExtensionSDK
 } from 'contentful-ui-extensions-sdk';
 import Config from './Config';
 import FieldEditor from './FieldEditor';
+import Dialog from './Dialog';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.scss';
 
@@ -20,5 +22,7 @@ init(sdk => {
     renderAtRoot(<Config sdk={sdk as AppExtensionSDK} />);
   } else if (sdk.location.is(locations.LOCATION_ENTRY_FIELD)) {
     renderAtRoot(<FieldEditor sdk={sdk as FieldExtensionSDK} />);
+  } else if (sdk.location.is(locations.LOCATION_DIALOG)) {
+    renderAtRoot(<Dialog sdk={sdk as DialogExtensionSDK} />);
   }
 });

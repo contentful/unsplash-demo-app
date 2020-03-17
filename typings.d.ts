@@ -51,4 +51,9 @@ interface UnsplashResponse {
   results: UnsplashResult[];
 }
 
+interface SearchResponse {
+  error: boolean;
+  photos: UnsplashResult[];
+}
+
 type AppConfig = TargetStateConfig | false;
