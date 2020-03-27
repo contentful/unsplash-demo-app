@@ -6,6 +6,7 @@ import {
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.scss';
 
-init(() => {
+init((sdk) => {
+  sdk.app.setReady();
   render(<div>Hello, Unsplash App!</div>, document.getElementById('root'));
 });
