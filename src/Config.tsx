@@ -39,26 +39,13 @@ export default class Config extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
-    const { app, space } = this.props.sdk;
-    app.onConfigure(this.onConfigure);
-
-    const [ctsRes, parameters] = await Promise.all([
-      space.getContentTypes<ContentType>(),
-      app.getParameters<AppParameters>()
-    ]);
-
-    const formattedContentTypes = ctsRes ? ctsRes.items : [];
-
-    // eslint-disable-next-line react/no-did-mount-set-state
-    this.setState(
-      {
-        contentTypes: formattedContentTypes,
-        selectedContentTypeId: parameters
-          ? parameters.selectedContentTypeId
-          : get(formattedContentTypes, [0, 'sys', 'id'], '')
-      },
-      () => app.setReady()
-    );
+    /* 
+      * TODO:
+      * 1. Get the app's saved parameters
+      * 2. Get all Content Types to display
+      * 3. Set an `onConfigure` method to be called when the app is installed
+      * 4. Set React state and let the Contentful web app know the Unsplash app is ready to render
+    */
   }
 
   onConfigure = async (): Promise<AppConfig> => {
