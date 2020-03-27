@@ -39,15 +39,11 @@ export default class FieldEditor extends React.Component<Props, State> {
   };
 
   openSearch = async () => {
-    const selectedPhoto: UnsplashResult | null = await this.props.sdk.dialogs.openCurrentApp({
-      title: 'Select a photo',
-      minHeight: 768,
-      width: 'large'
-    });
-
-    if (selectedPhoto) {
-      this.props.sdk.field.setValue(selectedPhoto);
-    }
+    /*
+      * TODO:
+      * 1. Allow our search button to open a dialog using the SDK
+      * 2. Set the image returned from the dialog as the value for our field
+    */
   };
 
   render() {
