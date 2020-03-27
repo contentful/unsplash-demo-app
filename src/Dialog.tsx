@@ -34,20 +34,18 @@ export default class Dialog extends React.Component<Props, State> {
   }
 
   onSearch = debounce(async (value: string) => {
-    if (!value) {
-      this.setState({ photos: [] });
-      return;
-    }
-
-    const res = await this.state.client.search(value);
-
-    this.setState({
-      photos: res.photos
-    });
-  }, 300);
+    /*
+      * TODO:
+      * 1. Call our Unsplash client with the search `value`
+      * 2. Set state to show a list of photos that came back from the search.
+    */
+  })
 
   save = (photo: UnsplashResult) => {
-    this.props.sdk.close(photo);
+    /*
+      * TODO:
+      * 1. Use the SDK to pass back the selected photo to the entry field.
+    */
   };
 
   render() {
